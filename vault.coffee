@@ -1,6 +1,10 @@
 casper = require("casper").create(
   imageLoad: false
+  waitTimeout: 10000;
+
 )
+
+casper.options.waitTimeout = 10000;
 
 getBalance = ->
   balance = document.querySelectorAll('span.abbr')
@@ -15,6 +19,7 @@ casper.start "https://www.dogevault.com", ->
 casper.waitForSelector "form#new_user input[type=submit][value='Login']", ->
   @click "form#new_user input[type=submit][value='Login']"
 
+
 casper.then ->
   bal = @evaluate getBalance
   XDG = bal[0]
@@ -26,4 +31,3 @@ casper.then ->
       @echo "#{XDG} Ɖ ~ #{EUR} €"
 
 casper.run()
-
