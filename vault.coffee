@@ -12,9 +12,6 @@ getEUR = ->
 casper.start "https://www.dogevault.com", ->
   @fill "form#new_user", {user_name: "user", user_password: "pass"}, false
 
-casper.then ->
-  @captureSelector "vaultshot0.png", "html"
-
 casper.waitForSelector "form#new_user input[type=submit][value='Login']", ->
   @click "form#new_user input[type=submit][value='Login']"
 
