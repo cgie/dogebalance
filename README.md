@@ -1,10 +1,10 @@
-# Dogecoin Conversion
+# Dogecoin Balance
 
 The script
 
-1. logs in to dogevault.com
-2. reads your balance
-3. converts your Dogecoins to EUR on coinmill.com
+1. logs in to dogevault.com and reads your balance
+3. logs in to poolerino and reads your balance
+3. converts the sum of all your Dogecoins (including unconfirmed ones) to EUR on coinmill.com
 4. outputs its results
 
 ```bash
